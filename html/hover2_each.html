@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<title>이미지바꾸기</title>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.11.3.min.js"></script>
+<script src="../js/fes.vendor.js"></script>
+<style>
+.tab-menu { float:left;width:20%;}
+.tab-menu li { width:100%; height:30px; border-bottom:1px solid #000; background-color:#fff; color:#999;}
+.tab-menu li:first-child { color:#999; background-color:#eee;}
+.tab-menu li a { display: block; height:100%; font-size:18px; line-height: 1.5;}
+.tab-wrap { float:right; width:80%; height:500px; background:#eee;}
+.tab-wrap .tab-area { display:none;}
+.tab-wrap .tab-area:first-child { display:block;}
+.tab-wrap img { width:100%;}
+</style>
+<script>
+$(function(){
+	var tabButton = $(".tab-menu li");
+	var tabCont = $(".tab-wrap .tab-area");
+
+	tabButton.each(function(i){
+		$(this).mouseenter(function(){
+			//console.log(i);
+			tabCont.hide(); //전체숨김
+			tabCont.eq(i).show(); //해당 인덱스 보이기
+			tabButton.css('background-color','#fff'); // 배경색상 초기화
+			$(this).css('background-color','#eee'); // 해당 인덱스 배경색상 변경
+		});
+	});
+
+	/*$(".tab-menu li a").eq(0).on("hover focusin", function(){
+		$('.tab-wrap .tab-area').hide();
+		$('.tab-wrap .tab-area').eq(0).show();
+		$(this).css('background-color','#eee');
+	});
+
+	$(".tab-menu li a").eq(1).on("hover focusin", function(){
+		$('.tab-wrap .tab-area').hide();
+		$('.tab-wrap .tab-area').eq(1).show();
+		$(".tab-menu li a").css('background-color','#fff');
+		$(this).css('background-color','#eee');
+	});
+
+	$(".tab-menu li a").eq(2).on("hover focusin", function(){
+		$('.tab-wrap .tab-area').hide();
+		$('.tab-wrap .tab-area').eq(2).show();
+		$(".tab-menu li a").css('background-color','#fff');
+		$(this).css('background-color','#eee');
+	});
+
+	$(".tab-menu li a").eq(3).on("hover focusin", function(){
+		$('.tab-wrap .tab-area').hide();
+		$('.tab-wrap .tab-area').eq(3).show();
+		$(".tab-menu li a").css('background-color','#fff');
+		$(this).css('background-color','#eee');
+	});*/
+});
+
+/*$(function(){
+	$(".tab-menu li a").eq(0).on("hover focusin", function(){
+		$('.tab-wrap div img').attr('src', '../images/temp/img_min1.jpg');
+		$(".tab-menu li a").css('background-color','#fff');
+		$(this).css('background-color','#eee');
+	});
+
+	$(".tab-menu li a").eq(1).on("hover focusin", function(){
+		$('.tab-wrap div img').attr('src', '../images/temp/img_min2.jpg');
+		$(".tab-menu li a").css('background-color','#fff');
+		$(this).css('background-color','#eee');
+	});
+
+	$(".tab-menu li a").eq(2).on("hover focusin", function(){
+		$('.tab-wrap div img').attr('src', '../images/temp/img_min3.jpg');
+		$(".tab-menu li a").css('background-color','#fff');
+		$(this).css('background-color','#eee');
+	});
+
+	$(".tab-menu li a").eq(3).on("hover focusin", function(){
+		$('.tab-wrap div img
+		').attr('src', '../images/temp/img_min4.jpg');
+		$(".tab-menu li a").css('background-color','#fff');
+		$(this).css('background-color','#eee');
+	});
+});*/
+
+/*$(function(){
+	$(".tab-menu li").eq(0).on("focusin", function(){$('.tab-wrap div img').attr('src', '../images/temp/img_min1.jpg');});
+	$(".tab-menu li").eq(1).on("focusin", function(){$('.tab-wrap div img').attr('src', '../images/temp/img_min2.jpg');});
+	$(".tab-menu li").eq(2).on("focusin", function(){$('.tab-wrap div img').attr('src', '../images/temp/img_min3.jpg');});
+	$(".tab-menu li").eq(3).on("focusin", function(){$('.tab-wrap div img').attr('src', '../images/temp/img_min4.jpg');});
+});*/
+</script>
+</head>
+<body>
+
+<!-- skip-to-content -->
+<div id="skip-to-content">
+	<a href="#content">본문바로가기</a>
+</div>
+<!-- //skip-to-content -->
+
+	<ul class="tab-menu">
+		<li><a href="javascript:;">무민변신1</a></li>
+		<li><a href="javascript:;">무민변신2</a></li>
+		<li><a href="javascript:;">무민변신3</a></li>
+		<li><a href="javascript:;">무민변신4</a></li>
+	</ul>
+	<section class="tab-wrap">
+		<div class="tab-area"><img src="../images/temp/img_min1.jpg" ></div>
+		<div class="tab-area"><img src="../images/temp/img_min2.jpg" ></div>
+		<div class="tab-area"><img src="../images/temp/img_min3.jpg" ></div>
+		<div class="tab-area"><img src="../images/temp/img_min4.jpg" ></div>
+	</section>
+
+<script src="../js/fes.util.js"></script>
+<script src="../js/fes.app.js"></script>
+<script src="../js/fes.exec.js"></script>
+</body>
+</html>

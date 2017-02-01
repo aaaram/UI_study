@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<title>탭탭</title>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.11.3.min.js"></script>
+<script src="../js/fes.vendor.js"></script>
+<style>
+.tab-menu { font-size:0; line-height: 0;}
+.tab-menu li { display: inline-block; width:300px; background-color:#fff; color:#999;}
+.tab-menu li.on { display: inline-block; background-color:#eee; color:#000;}
+.tab-menu li a { display: block; font-size:18px; line-height: 1.5;}
+.tab-wrap { width:100%; height:500px; background:#eee; }
+.tab-wrap .tab-area { display: none; }
+.tab-wrap .tab-area.on { display: block; }
+</style>
+<script>
+$(function(){
+	var tabButton = $(".tab-menu li");
+	var tabCont = $("tab-area");
+
+	tabButton.each(function(i){
+		$(this).click(function(){
+			tabButton.removeClass('on');
+			$(this).toggleClass('on');
+			tabCont.hide(); //전체내용숨김
+			tabCont.eq(i).show(); //해당 인덱스 내용 보임
+		});
+	});
+});
+
+/*$(".tab-menu li a").on("click", function(){
+	//alert('gg');
+	var myId = $(this).attr('id');
+	$('.tab-area').siblings('.tab-area').hide();
+	$('#'+myId+'-box').show();
+
+	$(this).parent().addClass('on');
+	$(this).parent().siblings().removeClass('on');
+	return false;
+});*/
+
+</script>
+</head>
+<body>
+
+<!-- skip-to-content -->
+<div id="skip-to-content">
+	<a href="#content">본문바로가기</a>
+</div>
+<!-- //skip-to-content -->
+
+	<ul class="tab-menu">
+		<li class="on"><a href="javascript:;" id="tab1">메뉴1</a></li>
+		<li><a href="javascript:;" id="tab2">메뉴2</a></li>
+	</ul>
+	<section class="tab-wrap">
+		<div class="tab-area on" id="tab1-box"><h2>나는 제목</h2>111111111111111111111111111111111111</div>
+		<div class="tab-area" id="tab2-box"><h2>나는 제목</h2>2222222222222222222222222222222222222</div>
+	</section>
+
+<script src="../js/fes.util.js"></script>
+<script src="../js/fes.app.js"></script>
+<script src="../js/fes.exec.js"></script>
+</body>
+</html>
