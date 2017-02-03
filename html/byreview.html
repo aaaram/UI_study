@@ -13,15 +13,52 @@
 
 <script>
 $(function(){
-	/*var gnbMenu = $(".gnb > ul > li");
 
+	//gnb
+	var gnbMenu = $(".gnb > ul > li");
 	gnbMenu.each(function(i){
-		$(this).click(function(){
+		//var overNum = $(".gnb > ul > li").eq(i);
 		console.log(gnbMenu);
-			$(this).eq(i).children().children().attr("src","../images/byreview/gnb-depth1_on.jpg");
-			return false;
+		gnbMenu.eq(i).children().click(function(){
+		console.log(overNum);
+			$(this).children().attr("src","../images/byreview/gnb-depth"+ overNum +"_on.jpg");
+			//return false;
 		});
-	});*/
+	})
+
+	// best 
+	var btnNum = $(".button-num li");
+	var bannerCont = $(".banner-cont ul li");
+	btnNum.each(function(i){
+		btnNum.eq(i).children().click(function(){
+			btnNum.children().removeClass('on');
+			$(this).toggleClass('on');
+			bannerCont.hide();
+			bannerCont.eq(i).show();
+		});
+	});
+
+	// new
+	var tabMenu = $(".tab-menu li");
+	var tabCont = $(".tab-wrap .tab-cont");
+	tabMenu.each(function(i){
+		tabMenu.eq(i).children().click(function(){
+			tabMenu.removeClass('on');
+			$(this).parent().toggleClass('on');
+			tabCont.hide();
+			tabCont.eq(i).show();
+		});
+	});
+
+	//popup
+	$(".button-popup").click(function(){
+		$('.popup').hide();
+		$(this).parent().siblings('.popup').show();
+	});
+
+	$(".button-close").click(function() {
+		$('.popup').hide();
+	});
 
 });
 </script>
@@ -98,48 +135,94 @@ $(function(){
 					<li class="on"><a href="#">최신글</a></li>
 					<li><a href="#">인기글</a></li>
 				</ul>
-				<div class="tab-cont">
-					<ul>
-						<li>
-							<div>
-								<img src="../images/byreview/img-tab-cont.jpg">
+				<div class="tab-wrap">
+					<div class="tab-cont" style="display:block;">
+						<ul>
+							<li>
 								<div>
-									<button type="button" class="button button-popup">추천회원보기</button>
+									<img src="../images/byreview/img-tab-cont01.jpg">
+									<div>
+										<button type="button" class="button button-popup">추천회원보기</button>
+									</div>
+									<div class="popup">
+										<img src="../images/byreview/img-pop.jpg">
+										<button type="button" class="button button-close"></button>
+									</div>
 								</div>
-								<div class="popup">
-									<img src="../images/byreview/img-pop.jpg">
-									<button type="button" class="button button-close"></button>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div>
-								<img src="../images/byreview/img-tab-cont.jpg">
+							</li>
+							<li>
 								<div>
-									<button type="button" class="button button-popup">추천회원보기</button>
+									<img src="../images/byreview/img-tab-cont01.jpg">
+									<div>
+										<button type="button" class="button button-popup">추천회원보기</button>
+									</div>
+									<div class="popup">
+										<img src="../images/byreview/img-pop.jpg">
+										<button type="button" class="button button-close"></button>
+									</div>
 								</div>
-								<div class="popup">
-									<img src="../images/byreview/img-pop.jpg">
-									<button type="button" class="button button-close"></button>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div>
-								<img src="../images/byreview/img-tab-cont.jpg">
+							</li>
+							<li>
 								<div>
-									<button type="button" class="button button-popup">추천회원보기</button>
+									<img src="../images/byreview/img-tab-cont01.jpg">
+									<div>
+										<button type="button" class="button button-popup">추천회원보기</button>
+									</div>
+									<div class="popup">
+										<img src="../images/byreview/img-pop.jpg">
+										
+										<button type="button" class="button button-close"></button>
+									</div>
 								</div>
-								<div class="popup">
-									<img src="../images/byreview/img-pop.jpg">
-									
-									<button type="button" class="button button-close"></button>
+							</li>
+						</ul>
+						<div class="paging">
+							<img src="../images/byreview/img-paging.jpg">
+						</div>
+					</div>
+					<div class="tab-cont">
+						<ul>
+							<li>
+								<div>
+									<img src="../images/byreview/img-tab-cont02.jpg">
+									<div>
+										<button type="button" class="button button-popup">추천회원보기</button>
+									</div>
+									<div class="popup">
+										<img src="../images/byreview/img-pop.jpg">
+										<button type="button" class="button button-close"></button>
+									</div>
 								</div>
-							</div>
-						</li>
-					</ul>
-					<div class="paging">
-						<img src="../images/byreview/img-paging.jpg">
+							</li>
+							<li>
+								<div>
+									<img src="../images/byreview/img-tab-cont02.jpg">
+									<div>
+										<button type="button" class="button button-popup">추천회원보기</button>
+									</div>
+									<div class="popup">
+										<img src="../images/byreview/img-pop.jpg">
+										<button type="button" class="button button-close"></button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../images/byreview/img-tab-cont02.jpg">
+									<div>
+										<button type="button" class="button button-popup">추천회원보기</button>
+									</div>
+									<div class="popup">
+										<img src="../images/byreview/img-pop.jpg">
+										
+										<button type="button" class="button button-close"></button>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="paging">
+							<img src="../images/byreview/img-paging.jpg">
+						</div>
 					</div>
 				</div>
 			</section>
