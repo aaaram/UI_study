@@ -28,7 +28,15 @@ $(function(){
 				var _imgOff = $(this).children('a').find('img').attr('src').replace('-on','-off');
 				$(this).find('img').attr('src', _imgOff);
 			});
+
+			gnbMenu.find('.depth2').hide();
+			$(this).siblings(".depth2").show();
 		});
+
+/*		trigger.mouseenter(function(){
+			gnbMenu.children().removeClass("on");
+			$(this).addClass('on');
+		});*/
 	});
 
 	// best 
@@ -63,14 +71,12 @@ $(function(){
 			//console.log(this);
 			$('.popup').hide();
 			$(this).parent().siblings('.popup').show();
-		}) ;
+		});
 
 		$(".button-close").click(function() {
 			$('.popup').hide();
 		});
 	});
-
-
 
 });
 </script>
@@ -87,12 +93,11 @@ $(function(){
 		<h1 class="logo"><img src="../images/byreview/logo.jpg" alt="바이리뷰"></h1>
 		<nav class="gnb">
 			<ul>
-				<li><a href="#"><img src="../images/byreview/gnb-depth1-off.jpg" alt="리뷰"></a></li>
 				<li>
-					<a href="#"><img src="../images/byreview/gnb-depth2-off.jpg" alt="프리뷰"></a>
+					<a href="#"><img src="../images/byreview/gnb-depth1-off.jpg" alt="리뷰"></a>
 					<div class="depth2">
 						<ul>
-							<li><a href="#">전체</a></li>
+							<li><a href="#">전체1</a></li>
 							<li><a href="#">디지털</a></li>
 							<li><a href="#">라이프</a></li>
 							<li><a href="#">뷰티</a></li>
@@ -102,9 +107,62 @@ $(function(){
 						</ul>
 					</div>
 				</li>
-				<li><a href="#"><img src="../images/byreview/gnb-depth3-off.jpg" alt="투게더"></a></li>
-				<li><a href="#"><img src="../images/byreview/gnb-depth4-off.jpg" alt="젯"></a></li>	
-				<li><a href="#"><img src="../images/byreview/gnb-depth5-off.jpg" alt="솝"></a></li>
+				<li>
+					<a href="#"><img src="../images/byreview/gnb-depth2-off.jpg" alt="프리뷰"></a>
+					<div class="depth2">
+						<ul>
+							<li><a href="#">전체2</a></li>
+							<li><a href="#">디지털</a></li>
+							<li><a href="#">라이프</a></li>
+							<li><a href="#">뷰티</a></li>
+							<li><a href="#">플레이스</a></li>
+							<li><a href="#">컬쳐</a></li>
+							<li><a href="#">테마</a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="../images/byreview/gnb-depth3-off.jpg" alt="투게더"></a>
+					<div class="depth2">
+						<ul>
+							<li><a href="#">전체3</a></li>
+							<li><a href="#">디지털</a></li>
+							<li><a href="#">라이프</a></li>
+							<li><a href="#">뷰티</a></li>
+							<li><a href="#">플레이스</a></li>
+							<li><a href="#">컬쳐</a></li>
+							<li><a href="#">테마</a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="../images/byreview/gnb-depth4-off.jpg" alt="젯"></a>
+					<div class="depth2">
+						<ul>
+							<li><a href="#">전체4</a></li>
+							<li><a href="#">디지털</a></li>
+							<li><a href="#">라이프</a></li>
+							<li><a href="#">뷰티</a></li>
+							<li><a href="#">플레이스</a></li>
+							<li><a href="#">컬쳐</a></li>
+							<li><a href="#">테마</a></li>
+						</ul>
+					</div>
+				</li>	
+				<li>
+					<a href="#"><img src="../images/byreview/gnb-depth5-off.jpg" alt="솝"></a>
+					<div class="depth2">
+						<ul>
+							<li><a href="#">전체5</a></li>
+							<li><a href="#">디지털</a></li>
+							<li><a href="#">라이프</a></li>
+							<li><a href="#">뷰티</a></li>
+							<li><a href="#">플레이스</a></li>
+							<li><a href="#">컬쳐</a></li>
+							<li><a href="#">테마</a></li>
+						</ul>
+					</div>
+				</li>
 			</ul>
 		</nav>
 	</div>	 	

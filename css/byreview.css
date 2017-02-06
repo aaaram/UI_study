@@ -10,13 +10,14 @@ body { font-family:'Noto Sans KR3', dotum, arial, sans-serif;}
 .header .gnb ul { overflow:hidden; margin-top:50px;}
 .header .gnb ul li { float:left; }
 .header .gnb ul li a { display:block;} 
-.header .gnb .depth2 { /* display:none; */ position:absolute; top:95px; left:15px; background-color:#fff;}
+.header .gnb .depth2 { display:none; position:absolute; top:95px; left:15px; background-color:#fff;}
 .header .gnb .depth2 ul { width:500px; margin:0 auto;}
 .header .gnb .depth2 ul li { display:inline-block; position:relative; font-size:0; line-height:0;}
 .header .gnb .depth2 ul li:before { position:absolute; top:3px; left:0; content:''; width:1px; height:13px; background-color:#c8c8c8;}
 .header .gnb .depth2 ul li:first-child:before { display:none;}
 .header .gnb .depth2 ul li a { display:block; padding:0 5px; font-size:11px; line-height:1.3; color:#7b7b7b; font-weight:bold;} 
 .header .gnb .depth2 ul li a:hover { color:#6491fb;}
+/* .header .gnb ul li a.on + .depth2 { display:block;}  */
 
 /* layout */
 .container { overflow:hidden; width:920px; margin:0 auto; padding-top:30px;}
