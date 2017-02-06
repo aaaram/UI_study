@@ -17,14 +17,19 @@ $(function(){
 	//gnb
 	var gnbMenu = $(".gnb > ul > li");
 	gnbMenu.each(function(i){
-		//var overNum = $(".gnb > ul > li").eq(i);
-		console.log(gnbMenu);
-		gnbMenu.eq(i).children().click(function(){
-		console.log(overNum);
-			$(this).children().attr("src","../images/byreview/gnb-depth"+ overNum +"_on.jpg");
-			//return false;
+		var _this = $(this)
+			, trigger = $(this).children()
+			, img = trigger.find('img')
+			, imgOn = img.attr('src').replace('-off','-on'); // off를 on으로 변경 후 문자열 저장 
+		
+		trigger.click(function(){
+			img.attr('src',imgOn);
+			gnbMenu.not(_this).each(function() { //gnbMenu에서 this가 아닌 것
+				var _imgOff = $(this).children('a').find('img').attr('src').replace('-on','-off');
+				$(this).find('img').attr('src', _imgOff);
+			});
 		});
-	})
+	});
 
 	// best 
 	var btnNum = $(".button-num li");
@@ -51,14 +56,21 @@ $(function(){
 	});
 
 	//popup
-	$(".button-popup").click(function(){
-		$('.popup').hide();
-		$(this).parent().siblings('.popup').show();
+	var listCont = $(".tab-cont > ul > li")
+
+	listCont.each( function(){
+		$(this).find('.button-popup').click(function(){
+			//console.log(this);
+			$('.popup').hide();
+			$(this).parent().siblings('.popup').show();
+		}) ;
+
+		$(".button-close").click(function() {
+			$('.popup').hide();
+		});
 	});
 
-	$(".button-close").click(function() {
-		$('.popup').hide();
-	});
+
 
 });
 </script>
@@ -75,9 +87,9 @@ $(function(){
 		<h1 class="logo"><img src="../images/byreview/logo.jpg" alt="바이리뷰"></h1>
 		<nav class="gnb">
 			<ul>
-				<li><a href="#"><img src="../images/byreview/gnb-depth1.jpg" alt="리뷰"></a></li>
+				<li><a href="#"><img src="../images/byreview/gnb-depth1-off.jpg" alt="리뷰"></a></li>
 				<li>
-					<a href="#"><img src="../images/byreview/gnb-depth2.jpg" alt="프리뷰"></a>
+					<a href="#"><img src="../images/byreview/gnb-depth2-off.jpg" alt="프리뷰"></a>
 					<div class="depth2">
 						<ul>
 							<li><a href="#">전체</a></li>
@@ -90,9 +102,9 @@ $(function(){
 						</ul>
 					</div>
 				</li>
-				<li><a href="#"><img src="../images/byreview/gnb-depth3.jpg" alt="투게더"></a></li>
-				<li><a href="#"><img src="../images/byreview/gnb-depth4.jpg" alt="젯"></a></li>	
-				<li><a href="#"><img src="../images/byreview/gnb-depth5.jpg" alt="솝"></a></li>
+				<li><a href="#"><img src="../images/byreview/gnb-depth3-off.jpg" alt="투게더"></a></li>
+				<li><a href="#"><img src="../images/byreview/gnb-depth4-off.jpg" alt="젯"></a></li>	
+				<li><a href="#"><img src="../images/byreview/gnb-depth5-off.jpg" alt="솝"></a></li>
 			</ul>
 		</nav>
 	</div>	 	
@@ -145,7 +157,7 @@ $(function(){
 										<button type="button" class="button button-popup">추천회원보기</button>
 									</div>
 									<div class="popup">
-										<img src="../images/byreview/img-pop.jpg">
+										<img src="../images/byreview/img-pop1.jpg">
 										<button type="button" class="button button-close"></button>
 									</div>
 								</div>
@@ -157,7 +169,7 @@ $(function(){
 										<button type="button" class="button button-popup">추천회원보기</button>
 									</div>
 									<div class="popup">
-										<img src="../images/byreview/img-pop.jpg">
+										<img src="../images/byreview/img-pop2.jpg">
 										<button type="button" class="button button-close"></button>
 									</div>
 								</div>
@@ -169,7 +181,7 @@ $(function(){
 										<button type="button" class="button button-popup">추천회원보기</button>
 									</div>
 									<div class="popup">
-										<img src="../images/byreview/img-pop.jpg">
+										<img src="../images/byreview/img-pop3.jpg">
 										
 										<button type="button" class="button button-close"></button>
 									</div>
@@ -189,7 +201,7 @@ $(function(){
 										<button type="button" class="button button-popup">추천회원보기</button>
 									</div>
 									<div class="popup">
-										<img src="../images/byreview/img-pop.jpg">
+										<img src="../images/byreview/img-pop4.jpg">
 										<button type="button" class="button button-close"></button>
 									</div>
 								</div>
@@ -201,7 +213,7 @@ $(function(){
 										<button type="button" class="button button-popup">추천회원보기</button>
 									</div>
 									<div class="popup">
-										<img src="../images/byreview/img-pop.jpg">
+										<img src="../images/byreview/img-pop5.jpg">
 										<button type="button" class="button button-close"></button>
 									</div>
 								</div>
@@ -213,7 +225,7 @@ $(function(){
 										<button type="button" class="button button-popup">추천회원보기</button>
 									</div>
 									<div class="popup">
-										<img src="../images/byreview/img-pop.jpg">
+										<img src="../images/byreview/img-pop6.jpg">
 										
 										<button type="button" class="button button-close"></button>
 									</div>
