@@ -15,7 +15,23 @@
 $(function(){
 
 	//gnb
+	gnb();
+
+	//Best tab1
+	tab1();
+
+	//tab2
+	tab2();
+
+	//popup
+	popup();
+
+});
+
+// gnb
+function gnb() {
 	var gnbMenu = $(".gnb > ul > li");
+
 	gnbMenu.each(function(i){
 		var _this = $(this)
 			, trigger = $(this).children()
@@ -28,20 +44,17 @@ $(function(){
 				var _imgOff = $(this).children('a').find('img').attr('src').replace('-on','-off');
 				$(this).find('img').attr('src', _imgOff);
 			});
-
 			gnbMenu.find('.depth2').hide();
 			$(this).siblings(".depth2").show();
 		});
-
-/*		trigger.mouseenter(function(){
-			gnbMenu.children().removeClass("on");
-			$(this).addClass('on');
-		});*/
 	});
+}
 
-	// best 
+// Best tab1
+function tab1() {
 	var btnNum = $(".button-num li");
 	var bannerCont = $(".banner-cont ul li");
+
 	btnNum.each(function(i){
 		btnNum.eq(i).children().click(function(){
 			btnNum.children().removeClass('on');
@@ -50,35 +63,45 @@ $(function(){
 			bannerCont.eq(i).show();
 		});
 	});
+}
 
-	// new
+//tab2
+function tab2() {
 	var tabMenu = $(".tab-menu li");
 	var tabCont = $(".tab-wrap .tab-cont");
+
 	tabMenu.each(function(i){
 		tabMenu.eq(i).children().click(function(){
 			tabMenu.removeClass('on');
 			$(this).parent().toggleClass('on');
 			tabCont.hide();
 			tabCont.eq(i).show();
+			return false
 		});
 	});
+}
 
-	//popup
-	var listCont = $(".tab-cont > ul > li")
+//POPUP
+function popup() {
+	var listCont = $(".tab-cont > ul > li");
+	var popup = $('.popup');
 
 	listCont.each( function(){
-		$(this).find('.button-popup').click(function(){
-			//console.log(this);
-			$('.popup').hide();
-			$(this).parent().siblings('.popup').show();
+		$(this).find('.button-popup').click(function(){ // 팝업버튼 클릭 했을때
+			if($(this).parent().siblings('.popup').is(":visible")) { //팝업버튼이 보이고 있으면,
+				popup.hide(); // 전체 팝업도 가리고 
+			} else { //팝업이 닫혀있으면
+				//popup.hide(); // 전체 닫구
+				$(this).parent().siblings('.popup').show(); // this의 팝업만 열규
+			}
 		});
 
 		$(".button-close").click(function() {
-			$('.popup').hide();
+			$(this).parent().hide();
 		});
 	});
+}
 
-});
 </script>
 </head>
 <body>
